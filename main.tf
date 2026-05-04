@@ -9,7 +9,7 @@ module "s3" {
 
 module "cloudfront" {
   source             = "./modules/cloudfront"
-  origin_id          = module.s3.bucket_id
+  origin_id          = module.s3.teste_do_brunao
   bucket_domain_name = module.s3.bucket_domain_name
   cdn_price_class    = "PriceClass_100"
   cdn_tags = {
@@ -19,10 +19,15 @@ module "cloudfront" {
 }
 
 module "sqs" {
-  source     = "terraform-aws-modules/sqs/aws"
-  name       = "example"
+  source = "terraform-aws-modules/sqs/aws"
+
+  name = "example"
+
   create_dlq = true
+
   tags = {
     Iac = true
   }
 }
+
+

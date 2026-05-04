@@ -3,7 +3,7 @@ output "bucket_domain_name" {
   sensitive   = false
   description = "Nome de domínio do bucket s3"
 }
- output "bucket_id" {
+ output "teste_do_brunao" {
    value = aws_s3_bucket.s3-bucket.id
    sensitive = false
    description = "Id de domínio do bucket s3"
